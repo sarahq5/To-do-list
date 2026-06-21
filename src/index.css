@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  background-image: url("pink1.jpg"); /* or ./pink1.jpg */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* container */
+.container {
+  font-family: Arial, Helvetica, sans-serif;
+
+  background-color: rgba(255, 255, 255, 0.9); /* light background */
+  padding: 20px;
+
+  max-width: 1000px;
+  margin: 20px auto; /* center WITHOUT breaking layout */
+  border-radius: 8px;
+}

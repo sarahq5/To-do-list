@@ -1,0 +1,97 @@
+/* =========================================================
+   Header — banner for the Desk Stack to-do list
+   Same palette/type system as ToDoList.css, so the two
+   sit together as one product, not two separate pages.
+   ========================================================= */
+
+.Header {
+  --plum: #4E3A72;
+  --plum-dark: #3A2B57;
+  --honey: #F0A93B;
+  --paper: #F6F4FB;
+
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  position: relative;
+  width: 100%;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  padding: 0 6vw;
+  border-radius: 20px;
+  overflow: hidden;
+  color: var(--paper);
+
+  /* Plum tint multiplied over the photo so light text stays
+     readable no matter what part of the image sits behind it. */
+  background:
+    
+    url('pink.jpg') center/cover no-repeat;
+}
+
+/* Soft honey glow tucked in the corner — the one accent the
+   eye lands on, echoing the add-button color from the list below. */
+.Header::after {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  right: -80px;
+  bottom: -120px;
+  background: radial-gradient(circle, var(--honey) 0%, transparent 70%);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 560px;
+}
+
+/* Optional hooks — use whichever of these your markup has,
+   ignore the rest. */
+
+.header-content .eyebrow {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--honey);
+}
+
+.header-content h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(26px, 3.6vw, 40px);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.header-content p {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(246, 244, 251, 0.82);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+  .Header {
+    min-height: 220px;
+    padding: 0 6vw;
+    border-radius: 16px;
+  }
+
+  .header-content {
+    max-width: 100%;
+  }
+}
